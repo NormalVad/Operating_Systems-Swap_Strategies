@@ -2,6 +2,16 @@
 #include <string.h>
 #include <stdbool.h>
 
+int count1 = 0;
+int count2 = 0;
+int count3 = 0;
+int count4 = 0;
+char* traceFile;
+int frameCount;
+char* swapStrat;
+bool isVerboseOn;
+int clockHand = 0;
+
 // count1 counts total memory accesses
 // count2 counts memory misses
 // count3 counts number of writes on the disk
@@ -12,16 +22,6 @@ void output(){
   printf("Number of writes: %d\n", count3);
   printf("Number of drops: %d\n", count4);
 }
-
-int count1 = 0;
-int count2 = 0;
-int count3 = 0;
-int count4 = 0;
-char* traceFile;
-int frameCount;
-char* swapStrat;
-bool isVerboseOn;
-int clockHand = 0;
 
 void verboseOutput(int readAddr, int dropAddr, bool isDirty){
   if(isDirty){
